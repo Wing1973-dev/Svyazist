@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Svyazist.Controllers.HomeController.EntityRow>
+@{
+    ViewData["Title"] = "Статистика продаж";
+}
+
+<div class="text-center">
+    <h4 class="display-4">Статистика продаж по выбранному товару</h4>
+    <table class="collapsed" >
+        <thead>
+            <tr>
+                <th>№п/п</th>
+                <th>Дата продажи</th>
+                <th>Кол-во продаж<br />(нараст.)</th>
+                <th>Сумма продаж<br />(нараст.)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var row in Model) {
+                <tr>
+                    <td>@row.numbersInOrder</td>
+                    <td>@row.saleDate</td>
+                    <td>@row.runNumbersOfSales</td>
+                    <td>@row.runCostsOfSales</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
